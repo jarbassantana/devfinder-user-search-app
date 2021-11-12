@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+:root {
+  --hue-color: 217;
+  --hue-color-blue: 212;
+  /* ========= Cores ============ */
+  --first-color: #0077ff;
+  --first-color-second: #697c9b;
+  --first-color-lighter-blue: #4b699b;
+  --first-color-alt: #2a3341;
+  --color-search: #f64646;
+  --body-color: #f6f8ff;
+  --logo-color: #222731;
+  /* ================= Fontes ================== */
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px */
+  --body-font: 'Space Mono', monospace;
+  --h1-font-size: 2.6rem;
+  --h2-font-size: 2.2rem;
+  --h3-font-size: 1.6rem;
+  --h4-font-size: 1.3rem;
+  --normal-font-size: 1.5rem;
+  /* ============= font weight ================= */
+  --font-regular: 400;
+  --font-bold: 700;
+  /* ============== margin bottom =============== */
+  /* .25rem = 4px. .5rem = 8px, .75rem = 12px */
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+}
+
+.container {
+  max-width: 1248px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content {
+  width: 95%;
+  display: -ms-grid;
+  display: grid;
+  max-width: 730px;
+}
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3.6rem;
+}
+
+.header-container h1 {
+  color: var(--logo-color);
+  font-size: var(--h1-font-size);
+}
+
+.icon-sun-and-moon {
+  border: none;
+  background: transparent;
+  font-family: var(--body-font);
+  font-weight: var(--font-bold);
+  color: var(--first-color-second);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.6rem;
+}
+
+.search-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=style.css.map */

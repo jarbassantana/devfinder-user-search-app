@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --hue-color: 217;
+    --hue-color-blue: 212;
+
+    /* ========= Cores ============ */
+
+    --first-color: hsl(212, 100%, 50%);
+    --first-color-second: hsl(217, 20%, 51%);
+    --first-color-lighter-blue: hsl(217, 35%, 45%);
+    --first-color-alt: hsl(217, 21%, 21%);
+    --color-search: hsl(0, 91%, 62%);
+    --body-color: #f6f8ff;
+    --logo-color: #222731;
+
+    /* ================= Fontes ================== */
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px */
+
+    --body-font: 'Space Mono', monospace;
+
+    --h1-font-size: 2.6rem;
+    --h2-font-size: 2.2rem;
+    --h3-font-size: 1.6rem;
+    --h4-font-size: 1.3rem;
+    --normal-font-size: 1.5rem;
+
+    /* ============= font weight ================= */
+    --font-regular: 400;
+    --font-bold: 700;
+
+    /* ============== margin bottom =============== */
+    /* .25rem = 4px. .5rem = 8px, .75rem = 12px */
+
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+}
+
+.container {
+    max-width: 1248px;
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.content {
+    width: 95%;
+    display: grid;
+    max-width: 730px;
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.6rem;
+    h1 {
+        color: var(--logo-color);
+        font-size: var(--h1-font-size);
+    }
+}
+
+.icon-sun-and-moon {
+    border: none;
+    background: transparent;
+    font-family: var(--body-font);
+    font-weight: var(--font-bold);
+    color: var(--first-color-second);
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
