@@ -22,23 +22,77 @@
                         </button>
                     </div>
                     <form class="search-container">
-                        <label for="">
+                        <label for="search">
                             <img src="./assets/img/icon-search.svg" alt="" />
                         </label>
                         <input
                             type="text"
-                            name=""
-                            id=""
+                            name="search"
+                            id="search"
                             placeholder="Search GitHub username…"
                         />
-                        <button>Search</button>
+                        <button class="btn-search-form">Search</button>
                     </form>
                     <div class="profile-container">
-                        <img src="" alt="" />
+                        <img
+                            id="userProfileImg"
+                            src="./assets/img/user-profile-image.svg"
+                            alt="user profile image"
+                        />
                         <div class="info-profile">
-                            <div class="profile-content-info"></div>
-                            <div class="profile-content-socials"></div>
-                            <div class="profile-content-location"></div>
+                            <div class="profile-content-info">
+                                <div class="userContent-content">
+                                    <h2 id="userName">The Octocat</h2>
+                                    <p id="userProfile">@octocat</p>
+                                    <p id="userBio">This profile has no bio</p>
+                                </div>
+                                <div class="userDate-content">
+                                    <p id="userDateJoined">
+                                        Joined 25 Jan 2011
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="profile-content-socials">
+                                <div>
+                                    <p class="repos-title">Repos</p>
+                                    <p id="userNumberRepos">8</p>
+                                </div>
+                                <div>
+                                    <p class="followers-title">Followers</p>
+                                    <p id="userNumberFollowers">3938</p>
+                                </div>
+                                <div>
+                                    <p class="following-title">Following</p>
+                                    <p id="userNumberFollowing">9</p>
+                                </div>
+                            </div>
+                            <div class="profile-content-location">
+                                <p>
+                                    <img
+                                        src="./assets/img/icon-location.svg"
+                                        alt=""
+                                        srcset=""
+                                    />San Francisco
+                                </p>
+                                <p>
+                                    <img
+                                        src="./assets/img/icon-twitter.svg"
+                                        alt=""
+                                    />Not Available
+                                </p>
+                                <p>
+                                    <img
+                                        src="./assets/img/icon-website.svg"
+                                        alt=""
+                                    />https://github.blog
+                                </p>
+                                <p>
+                                    <img
+                                        src="./assets/img/icon-company.svg"
+                                        alt=""
+                                    />@github
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
