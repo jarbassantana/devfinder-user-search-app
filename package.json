@@ -1,5 +1,16 @@
 {
+  "name": "user-search-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jarbassantana/devfinder-user-search-app.git",
+  "author": "Jarbas Santana <jarbasfilho29@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
-    "parcel": "^2.0.1"
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.43.4"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   }
 }
