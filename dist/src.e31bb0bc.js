@@ -117,9 +117,86 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"assets/modules/light-mode.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = initLightMode;
+
+function initLightMode() {
+  var btnMode = document.getElementById('userBtnMode');
+  var nameMode = document.getElementById('nameMode');
+
+  function handleClick(event) {
+    var body = document.body;
+    body.classList.toggle('darkMode');
+
+    if (nameMode.innerHTML === 'DARK') {
+      document.getElementById('iconSVG').src = '/icon-sun.a1aadbed.svg';
+      nameMode.innerHTML = 'LIGHT';
+    } else if (nameMode.innerHTML === 'LIGHT') {
+      document.getElementById('iconSVG').src = '/icon-moon.a96a287b.svg';
+      nameMode.innerHTML = 'DARK';
+    }
+  }
+
+  console.log();
+  btnMode.addEventListener('click', handleClick);
+}
+},{}],"assets/modules/search-data.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = initSearchData;
+
+function initSearchData() {}
+
+var user = document.getElementById('userSearch');
+var btnSearch = document.getElementById('btnSearch');
+
+function searchHandleClick(event) {
+  event.preventDefault();
+  var data = user.value;
+  searchData(data);
+}
+
+function searchData(data) {
+  var url = "https://api.github.com/users/".concat(data);
+  var urlProfile = "https://github.com/".concat(data);
+  fetch(url).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    userName.textContent = data.name;
+    userProfile.textContent = data.login;
+    userProfileImg.src = data.avatar_url;
+    userBio.textContent = data.bio;
+    userNumberRepos.textContent = data.public_repos;
+    userNumberFollowers.textContent = data.followers;
+    userNumberFollowing.textContent = data.following;
+    document.getElementById('userHref').href = urlProfile;
+    console.log(data);
+  });
+}
+
+btnSearch.addEventListener('click', searchHandleClick);
+console.log(btnSearch); // const userURL = elementoSelecionado.valorDoInput
+// const url = `https://api.github.com/${userURL}`
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _lightMode = _interopRequireDefault(require("./assets/modules/light-mode.js"));
+
+var _searchData = _interopRequireDefault(require("./assets/modules/search-data.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _lightMode.default)();
+(0, _searchData.default)();
+},{"./assets/modules/light-mode.js":"assets/modules/light-mode.js","./assets/modules/search-data.js":"assets/modules/search-data.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -147,7 +224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54537" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64325" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
