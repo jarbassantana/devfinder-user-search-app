@@ -57,49 +57,11 @@ async function fetchUser(username) {
     return formattedData
 }
 
-//
-
 function formatDate(ISO) {
     const formattedDate = ISO
     return formattedDate
 }
 
-// async function searchData(data) {
-//     const urlProfile = `https://github.com/${data}`
-//     const response = await fetch(`https://api.github.com/users/${data}`)
-
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             const twitter = (userTwitter.textContent = data.twitter_username)
-//             const location = (userLocation.textContent = data.location)
-//             const blog = (userLink.textContent = data.blog)
-//             const company = (userCompany.textContent = data.company)
-//             userName.textContent = data.name
-//             userProfile.textContent = data.login
-//             userProfileImg.src = data.avatar_url
-//             userBio.textContent = data.bio
-//             userNumberRepos.textContent = data.public_repos
-//             userNumberFollowers.textContent = data.followers
-//             userNumberFollowing.textContent = data.following
-//             document.getElementById('userHref').href = urlProfile
-
-//             // verificaTwitter()
-//             // verificaLocation()
-
-//             // console.log((userTwitter.textContent = data.twitter_username))
-
-//             console.log(data)
-//         })
-// }
-
-const events = ['click', 'keyup']
-
-events.forEach(useEvents => {
-    btnSearch.addEventListener(useEvents, searchHandleClick)
+document.querySelector('form').addEventListener('submit', () => {
+    btnSearch.addEventListener(searchHandleClick)
 })
-
-// console.log(btnSearch)
-// const userURL = elementoSelecionado.valorDoInput
-
-// const url = `https://api.github.com/${userURL}`
