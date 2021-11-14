@@ -145,6 +145,7 @@ body {
         font-family: var(--body-font);
         width: 80%;
         background-color: transparent;
+        color: var(--first-color-alt);
     }
     button {
         border: none;
@@ -195,6 +196,7 @@ body {
             }
 
             .userDate-content {
+                margin-top: 0.8rem;
                 p {
                     color: var(--first-color-second);
                     font-size: 1.5rem;
@@ -247,10 +249,12 @@ body {
                 font-size: 1.5rem;
                 path {
                     fill: var(--first-color-lighter-blue);
+                    max-width: 20px;
+                    width: 100%;
                 }
             }
             li.not-available {
-                opacity: 0.5;
+                opacity: 0.5 !important;
             }
         }
     }

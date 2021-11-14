@@ -137,6 +137,7 @@ body {
   font-family: var(--body-font);
   width: 80%;
   background-color: transparent;
+  color: var(--first-color-alt);
 }
 .search-container button {
   border: none;
@@ -184,6 +185,9 @@ body {
   font-size: 1.6rem;
   color: var(--first-color);
   line-height: 2.6rem;
+}
+.profile-container .info-profile .profile-content-info .userDate-content {
+  margin-top: 0.8rem;
 }
 .profile-container .info-profile .profile-content-info .userDate-content p {
   color: var(--first-color-second);
@@ -235,9 +239,11 @@ body {
 }
 .profile-container .info-profile .profile-content-location li path {
   fill: var(--first-color-lighter-blue);
+  max-width: 20px;
+  width: 100%;
 }
 .profile-container .info-profile .profile-content-location li.not-available {
-  opacity: 0.5;
+  opacity: 0.5 !important;
 }
 
 .item-3 {
