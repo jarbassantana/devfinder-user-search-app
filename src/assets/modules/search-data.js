@@ -1,9 +1,9 @@
-export default function initSearchData() {}
-
 import dayjs from 'dayjs'
-console.log(dayjs('2019-06-06'))
 
-const btnSearch = document.getElementById('btnSearch')
+export default function initSearchData() {
+    const btnSearch = document.getElementById('btnSearch')
+    btnSearch.addEventListener('click', searchHandleClick)
+}
 
 function searchHandleClick(event) {
     event.preventDefault()
@@ -14,6 +14,7 @@ function searchHandleClick(event) {
 
 async function handleUserDOM(username) {
     const userData = await fetchUser(username)
+    if (!userData.username && !userData.name) return
 
     document.getElementById('userName').textContent = userData.name
     document.getElementById('userProfile').textContent = userData.username
@@ -28,7 +29,6 @@ async function handleUserDOM(username) {
 
     document.getElementById('userLink').textContent = userData.blog
     document.getElementById('userCompany').textContent = userData.company
-    console.log(userData)
 }
 
 function changeHref(username) {
@@ -47,13 +47,14 @@ async function fetchUser(username) {
         repos: data.public_repos,
         followers: data.followers,
         following: data.following,
-        location: data.location,
-        twitter: data.twitter_username,
-        blog: data.blog,
-        company: data.company,
+        location: data.location || 'Not Available',
+        twitter: data.twitter_username || 'Not Available',
+        blog: data.blog || 'Not Available',
+        company: data.company || 'Not Available',
         joinedAt: formatDate(data.created_at)
     }
-    console.log(data.message)
+    data.message === 'Not Found' && alert('User not found')
+
     return formattedData
 }
 
