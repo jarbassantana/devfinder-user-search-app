@@ -29,6 +29,9 @@ async function handleUserDOM(username) {
 
     document.getElementById('userLink').textContent = userData.blog
     document.getElementById('userCompany').textContent = userData.company
+    document.getElementById(
+        'userDateJoined'
+    ).textContent = `Joined ${userData.joinedAt}`
 }
 
 function changeHref(username) {
@@ -59,8 +62,7 @@ async function fetchUser(username) {
 }
 
 function formatDate(ISO) {
-    const formattedDate = ISO
-    return formattedDate
+    return dayjs(ISO).format('D MMM YYYY')
 }
 
 document.querySelector('form').addEventListener('submit', () => {
