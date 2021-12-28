@@ -8,33 +8,27 @@ export default function initLightMode() {
 }
 
 function handleClick() {
-    const iconContainer = document.getElementById('icon-container')
     const nameMode = document.getElementById('nameMode')
-    const bodyMode = document.querySelector('body')
 
-    bodyMode.classList.toggle('darkMode')
-    if (nameMode.textContent === 'DARK') {
-        nameMode.textContent = 'LIGHT'
-        iconContainer.innerHTML = sunIcon
-        localStorage.setItem('colorTheme', 'dark')
-        return
-    }
-
-    nameMode.textContent = 'DARK'
-    iconContainer.innerHTML = moonIcon
-    localStorage.setItem('colorTheme', 'light')
+    nameMode.textContent === 'DARK' 
+        ? handleStateChange('LIGTH', sunIcon)
+        : handleStateChange('DARK', moonIcon)
 }
 
 function handlePageLoad() {
     const storedValue = localStorage.getItem('colorTheme')
-    const bodyMode = document.querySelector('body')
+    
+    storedValue === 'dark' && handleStateChange('LIGHT', sunIcon)
+}
+
+function handleStateChange(nameText, svgIcon) {
     const iconContainer = document.getElementById('icon-container')
     const nameMode = document.getElementById('nameMode')
+    const bodyMode = document.querySelector('body')
+    
+    bodyMode.classList.toggle('darkMode')
+    nameMode.textContent = nameText
+    iconContainer.innerHTML = svgIcon
 
-    if (storedValue === 'dark') {
-        bodyMode.classList.add('darkMode')
-        nameMode.textContent = 'LIGHT'
-        iconContainer.innerHTML = sunIcon
-    }
-    console.log(storedValue)
+    localStorage.setItem('colorTheme', nameText === 'DARK' ? 'light' : 'dark' )
 }
